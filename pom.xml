@@ -1,0 +1,227 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>CucumberClickcar</groupId>
+  <artifactId>QAClickcar</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>QAClickcar</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<junit.version>4.13.2</junit.version>
+		<cucumber.version>7.1.0</cucumber.version>
+		<maven.compiler.version>3.8.1</maven.compiler.version>
+		<maven.surefire.version>2.22.2</maven.surefire.version>
+	</properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-core</artifactId>
+	    <version>${cucumber.version}</version>
+	</dependency>
+	    
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-java</artifactId>
+	    <version>${cucumber.version}</version>
+	</dependency>
+	    
+	    
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-junit</artifactId>
+	    <version>${cucumber.version}</version>
+	    <scope>test</scope>
+	</dependency>
+	    
+	    
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-java</artifactId>
+	    <version>4.1.0</version>
+	</dependency>
+	    
+	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+	<dependency>
+	    <groupId>io.github.bonigarcia</groupId>
+	    <artifactId>webdrivermanager</artifactId>
+	    <version>5.0.3</version>
+	</dependency>
+	    
+	    
+	<!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber6-adapter -->
+	<dependency>
+	    <groupId>tech.grasshopper</groupId>
+	    <artifactId>extentreports-cucumber6-adapter</artifactId>
+	    <version>2.8.4</version>
+	</dependency>
+	    
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-testng</artifactId>
+	    <version>${cucumber.version}</version>
+	</dependency>
+	    
+	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+	<dependency>
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>7.4.0</version>
+	    <scope>test</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	    <version>5.0.0</version>
+	</dependency>
+		
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>5.0.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+	<dependency>
+	    <groupId>io.rest-assured</groupId>
+	    <artifactId>rest-assured</artifactId>
+	    <version>4.4.0</version>
+	</dependency>
+		
+	<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+	<dependency>
+	    <groupId>com.googlecode.json-simple</groupId>
+	    <artifactId>json-simple</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+		
+	<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.8.9</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.8.2</version>
+</dependency>
+
+	
+  </dependencies>
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.version}</version>
+				<configuration>
+					<includes>
+						<include>**/TestRunner.java</include>
+					</includes>
+					<parallel>methods</parallel>
+					<threadCount>4</threadCount>
+                    <testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+			
+			<plugin> 
+				<groupId>org.apache.maven.plugins</groupId> 
+				<artifactId>maven-failsafe-plugin</artifactId> 
+				<version>3.0.0-M3</version> 
+				<executions> 
+					<execution> 
+						<goals> 
+							<goal>integration-test</goal> 
+						</goals> 
+						<configuration> 
+							<includes>  
+								<include>**/TestRunner.java</include> 
+							</includes> 
+							<parallel>methods</parallel> 
+							<threadCount>4</threadCount> 
+							<perCoreThreadCount>true</perCoreThreadCount> 
+							<forkCount>2</forkCount> 
+							<reuseForks>true</reuseForks> 
+							<reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory> 
+						</configuration> 
+					</execution> 
+				</executions> 
+			</plugin> -->
+			<plugin>
+	            <artifactId>maven-surefire-plugin</artifactId>
+	            <version>2.22.0</version>
+	            <configuration>
+						<includes>
+							<!--<include>**/TestRunner.java</include>-->
+							<include>**/ParallelRunner.java</include>
+						</includes>						
+						<parallel>methods</parallel>
+						<threadCount>4</threadCount>
+						<useUnlimitedThreads>false</useUnlimitedThreads>
+					</configuration>
+	            <dependencies>
+	                <dependency>
+	                    <groupId>org.junit.platform</groupId>
+	                    <artifactId>junit-platform-surefire-provider</artifactId>
+	                    <version>1.0.3</version>
+	                </dependency>
+	                <dependency>
+	                    <groupId>org.junit.jupiter</groupId>
+	                    <artifactId>junit-jupiter-engine</artifactId>
+	                    <version>5.0.3</version>
+	                </dependency>
+	            </dependencies>
+	        </plugin>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-failsafe-plugin</artifactId>
+			  <version>2.22.0</version>
+			  <configuration>                 
+			     <classesDirectory>${project.build.outputDirectory}</classesDirectory>
+			        <useSystemClassLoader>false</useSystemClassLoader>
+			  </configuration>
+			  <executions>
+			     <execution>
+			        <goals>
+			           <goal>integration-test</goal>
+			           <goal>verify</goal>
+			        </goals>
+			     </execution>
+			  </executions>
+			</plugin> 
+		</plugins>
+	</build>
+</project>

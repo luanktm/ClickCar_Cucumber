@@ -36,14 +36,13 @@ public class ApplicationHooks {
 		driverFactory = new DriverFactory();
 		driver = driverFactory.init_driver(browserName);
 		driver.get(prop.getProperty("URL"));
-		driver.get(driver.getCurrentUrl());
-		
+		driver.get(driver.getCurrentUrl());		
 	}
 
 	@After(order = 0)
 	public void quitBrowser() {
-		driver.quit();
-		System.out.println("quitBrowser");
+//		driver.quit();
+//		System.out.println("quitBrowser");
 	}
 
 	@After(order = 1)

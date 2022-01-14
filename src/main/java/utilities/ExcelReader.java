@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
+
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -17,6 +19,9 @@ import org.apache.poi.ss.util.NumberToTextConverter;
 
 public class ExcelReader {
 
+	private ConfigReader configReader;
+	Properties prop;
+	
 	public List<Map<String, String>> getData(String excelFilePath, String sheetName)
 			throws InvalidFormatException, IOException {
 		Sheet sheet = getSheetByName(excelFilePath, sheetName);

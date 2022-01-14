@@ -27,6 +27,7 @@ public class HomePage {
 	private By btnConfirmLocation = By.xpath("//span[text()='Set location']/..");
 	private By btnBrowserCars = By.xpath("//p[text()='Browse cars']");
 	
+	
 	public void clickLoginStart() {
 		elementUtils.checkPageIsReady();
 		elementUtils.doClick(btnLoginStart);

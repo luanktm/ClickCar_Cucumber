@@ -21,7 +21,6 @@ public class ChecklistPage {
 	
 	By lbItems = By.xpath("//p[@class='MuiTypography-root font-bold MuiTypography-body2']");
 	By lbBigItems = By.xpath("//p[@class='MuiTypography-root font-bold MuiTypography-body1']");
-//	By lbSubItems = By.xpath("(//p[@class='MuiTypography-root font-bold MuiTypography-body1'])[index]/../../../following-sibling::div//p[@class='MuiTypography-root font-bold MuiTypography-body2']");
 	String lbSubItemsXpath = "(//p[@class='MuiTypography-root font-bold MuiTypography-body1'])[index]/../../../following-sibling::div//p[@class='MuiTypography-root font-bold MuiTypography-body2']";
 	
 	
@@ -44,13 +43,13 @@ public class ChecklistPage {
 		int rownum=0;
 		for (int j = 0; j < bigItems.size(); j ++) {
 
-			List<WebElement> eles = driver.findElements(By.xpath(lbSubItemsXpath.replace("index",Integer.toString(j+1))));
-			for (int i = 0; i < eles.size(); i ++) {
+			List<WebElement> subItems = driver.findElements(By.xpath(lbSubItemsXpath.replace("index",Integer.toString(j+1))));
+			for (int i = 0; i < subItems.size(); i ++) {
 		    	  XSSFRow row=sheet.createRow(rownum++);
 		    	  XSSFCell cell1=row.createCell(1);
 		    	  XSSFCell cell2=row.createCell(2);
 		    	  String value1 = bigItems.get(j).getAttribute("innerHTML");
-		    	  String value2 = eles.get(i).getAttribute("innerHTML");
+		    	  String value2 = subItems.get(i).getAttribute("innerHTML");
 		    	  cell1.setCellValue(value1);
 		    	  cell2.setCellValue(value2);
 			}
